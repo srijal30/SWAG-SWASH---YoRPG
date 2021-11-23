@@ -17,7 +17,7 @@
  **********************************************/
 
 import java.io.*;
-import java.util.*;
+import java.util.*; //useless
 
 public class YoRPG {
 
@@ -31,8 +31,8 @@ public class YoRPG {
   private Monster smaug;
 
   //Game Vars
-  private int moveCount;
-  private boolean gameOver;
+  private int moveCount; //useless
+  private boolean gameOver; //useless
   private int difficulty;
 
   //Input Readers
@@ -144,8 +144,6 @@ public class YoRPG {
 
         System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
                             " for " + d2 + " points of damage.");
-
-        System.out.println( smaug + "\n" + pat);
 	    }//end while
 
 	    //option 1: you & the monster perish
