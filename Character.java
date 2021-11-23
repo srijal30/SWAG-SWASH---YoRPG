@@ -1,8 +1,8 @@
 public class Character{
     //Instance Variables
-    private int health = 100;
-    private int strength = 10; //values initialized in their classes
-    private int defense = 10; //values initialized in their classes
+    private int health;
+    private int strength; //values initialized in their classes
+    private int defense; //values initialized in their classes
   
     private double attackRating = 1;
     
@@ -18,16 +18,16 @@ public class Character{
       attackRating = rating;
     }
     //set health
-    public void setHealth( int rating){
-      attackRating = rating;
+    public void setHealth( int hp){
+      health = hp;
     }
     //set defense
-    public void setDefense( int rating){
-      attackRating = rating;
+    public void setDefense( int def){
+      defense = def;
     }
     //set strength
-    public void setStrength( int rating){
-      attackRating = rating;
+    public void setStrength( int stren){
+      strength = stren;
     }
   
     //Functioning Methods
@@ -48,5 +48,4 @@ public class Character{
     public void lowerHP( int damage ){
         health -= damage;
     } 
-    
   }
