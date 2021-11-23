@@ -8,7 +8,7 @@ public class Protagonist extends Character {
         this.name = name;
         setHealth( 100 );
         setStrength( 25 );
-        setDefense( 20 );       
+        setDefense( 10 );       
     }
 
 
