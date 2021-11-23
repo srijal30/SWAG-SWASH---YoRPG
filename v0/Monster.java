@@ -1,3 +1,4 @@
+
 public class Monster {
     
     //Instance Vars
