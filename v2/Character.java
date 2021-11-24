@@ -13,22 +13,6 @@ public class Character{
   public int getDefense(){
     return defense;
   }
-  //set AR
-  public void setAttackRating( double rating){
-    attackRating = rating;
-  }
-  //set health
-  public void setHealth( int hp){
-    health = hp;
-  }
-  //set defense
-  public void setDefense( int def){
-    defense = def;
-  }
-  //set strength
-  public void setStrength( int stren){
-    strength = stren;
-  }
 
   //Functioning Methods
   //Check if alive

@@ -89,10 +89,12 @@ public class YoRPG {
       System.out.println("An error has occured, plz try again.");
     }
 
+    //OUR DRIVER MODS
+
     //instantiate the player's character
-    s = "1: Warrior\nA powerful melee soldier, the Warrior is quick with a sword and can take quite the hit. Everthing is merely a flesh wound to this brave knight. t\n";
-    s += "2: Mage\nA wise magician, strong in the ways of magic but with subpar health. His robes offer little protection against claws or steel.\n";
-    s += "3: Archer\nTrained in the ways of the elves, the nimble Archer's arrows fly straight and true. Don't let him be caught by surprise, as his armor won't hold for long in a melee encounter.\n";
+    s = "1: Warrior\n" + Warrior.about() + "\n";
+    s += "2: Mage\n" + Mage.about() + "\n";
+    s += "3: Archer" + Archer.about() + "\n";
     s += "What is your background?: ";
     System.out.print(s);
 
@@ -100,7 +102,6 @@ public class YoRPG {
       trade = Integer.parseInt( in.readLine() );
     }
     catch (IOException e ){
-      
     }
     
     if( trade == 1 ){
