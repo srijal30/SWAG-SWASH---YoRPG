@@ -4,6 +4,5 @@ public class Monster extends Character {
       setStrength( 25 + (int) (Math.random() * 10)) ;
       setDefense( 10 + (int) (Math.random() * 5)) ;
     }
-    
   }
   
