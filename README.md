@@ -1,9 +1,9 @@
 # SWAG-SWASH---YoRPG: Salaj Rijal, Micheal Kamela, Ariel Fuchs
 Based. 
 
-New Classes:
+##New Classes:
 
-## Character
+### Character
 All characters. 
 
 **Contains vars:**
