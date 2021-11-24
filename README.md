@@ -1,7 +1,7 @@
 # SWAG-SWASH---YoRPG: Salaj Rijal, Micheal Kamela, Ariel Fuchs
 Based. 
 
-##New Classes:
+## New Classes:
 
 ### Character
 All characters. 
@@ -53,25 +53,41 @@ You shall be rewarded for your bravery.
 For nonplayer characters, the enemy of the player.
 
 #### Goblin
-Weakest monster
+Weakest monster.
 * Low Health
 * Low Strength
 * Low Defense
 
 #### Orc
-Medium tier monster
+Medium tier monster.
 * Medium Health
 * High Strength
 * Medium Defense
 
 #### Ogre
-Arguably the strongest monster
+Arguably the strongest monster.
 * High Health
 * Medium Strength
 * Medium Defense
 
+## Modification Timeline
 
+### v0
+Made YoRPG compilable by adding classes Monster and Protaginist.
 
-Based. 
+### v1
+Made superclass Character, which the classes Monster and Protaginist stem from. This was becasue
+similar vars and methods were in both Monster and Protaginist.
 
+### v2
+Further diversified classes by adding 3 new Monsters and 3 new Protaginists. Each subclass has different stats promoting different playstyles.
+
+## Future Hopes
+
+* Range System
+* Linear Movement Mechanic
+* Add Items
+* Different Options During Battle
+* Multiplayer
+* Graphics
 
