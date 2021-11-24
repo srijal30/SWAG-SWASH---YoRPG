@@ -1,4 +1,4 @@
-# SWAG-SWASH---YoRPG: Salaj Rijal, Micheal Kamela, Ariel Fuchs
+# SWAG-SWASH---YoRPG: Salaj Rijal, Michael Kamela, Ariel Fuchs
 Latest Version: 2
 
 Based. 
