@@ -1,4 +1,5 @@
 # SWAG-SWASH---YoRPG: Salaj Rijal, Micheal Kamela, Ariel Fuchs
+Latest Version: 2
 Based. 
 
 ## New Classes:
@@ -16,8 +17,7 @@ All characters.
 * getDefense(): returns the defense stat.
 * isAlive(): returns true if character is alive, else false.
 * attack( Character ): calculates damage done, applies damage to character given, returns damage.
-* lowerHP ( int ): lowers health by the damage given.
-
+* lowerHP( int ): lowers health by the damage given.
 
 ### Protagonist
 A player character, the protagonist. 
@@ -29,7 +29,6 @@ A player character, the protagonist.
 * getName(): returns name of protagonist.
 * specialize(): multiples attackRating by 2, but divides defense by 2.
 * normalize(): divides attackRating by 2, defense multiplies by 2.
-
 
 #### Archer
 You should not choose to be an archer, they are cowards.
@@ -73,14 +72,14 @@ Arguably the strongest monster.
 ## Modification Timeline
 
 ### v0
-Made YoRPG compilable by adding classes Monster and Protaginist.
+Made YoRPG compilable by adding classes Monster and Protagonist.
 
 ### v1
 Made superclass Character, which the classes Monster and Protaginist stem from. This was becasue
 similar vars and methods were in both Monster and Protaginist.
 
 ### v2
-Further diversified classes by adding 3 new Monsters and 3 new Protaginists. Each subclass has different stats promoting different playstyles.
+Further diversified classes by adding 3 new Monsters and 3 new Protaginists. Each subclass has different stats, promoting different playstyles.
 
 ## Future Hopes
 
