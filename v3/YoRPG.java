@@ -234,9 +234,9 @@ public class YoRPG {
           } else if (choice == 2) {// Choice 2: approach the monster, need to add a restriction that you cant be <1 meters from the monster (not 0 because it doesnt make sense to be in the exact same spot)
               distance = distance - 5;
               System.out.println("The beast is now " + distance + " meters away");
-          } else if (choice ==3) {//Choice 3: flee. 50/50 chance at getting away using Math.random
+          } else if (choice ==3) {//Choice 3: flee. 25% chance at getting away using Math.random
             double chance = Math.random();
-            if (chance > 0.5) {
+            if (chance > 0.75) {
               System.out.println("You have escaped!");
               playTurn();
             } else {
