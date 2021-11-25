@@ -3,9 +3,10 @@ public class Character{
   protected int health;
   protected int strength; //values initialized in their classes
   protected int defense; //values initialized in their classes
+  protected int range;
 
   protected double attackRating = 1;
-  
+
   //Methods
 
   //Accesor Methods
@@ -26,10 +27,10 @@ public class Character{
         damage = 0;
       }
       opp.lowerHP( damage );
-      return damage; 
+      return damage;
   }
   //How much damage taketh
   public void lowerHP( int damage ){
       health -= damage;
-  } 
+  }
 }

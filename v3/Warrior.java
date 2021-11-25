@@ -3,12 +3,11 @@ public class Warrior extends Protagonist{
   public Warrior( String _name ){
 
     name = _name;
-    
+
     health = 150;
     strength = 15;
-    defense = 15; 
-    
-    //range = 5;
+    defense = 15;
+    range = 5;
   }
 
   public static String about(){

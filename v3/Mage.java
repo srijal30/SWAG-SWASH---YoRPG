@@ -7,7 +7,7 @@ public class Mage extends Protagonist {
       health = 69; //nice
       strength = 15;
       defense = 20;
-      //range = 20;
+      range = 20;
 
 
       if( name.equals("Gandalf") ){

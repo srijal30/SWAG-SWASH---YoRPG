@@ -8,7 +8,7 @@ public class Archer extends Protagonist{
     health = 75;
     strength = 20;
     defense = 5;
-    //range = 50;
+    range = 50;
 
   }
 
