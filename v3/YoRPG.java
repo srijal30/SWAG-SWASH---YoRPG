@@ -167,6 +167,7 @@ public class YoRPG {
   public boolean playTurn() {
     int i = 1;
     int d1, d2;
+    int f2;
 
     if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nPhew! There was no monster in this floor, continue to the next." );
@@ -240,6 +241,8 @@ public class YoRPG {
               playTurn();
             } else {
               System.out.println("The monster has pursued you! Fight now or die!");
+              f2 = smaug.attack(pat);
+              System.out.println( "\n" + "Ye Olde " + monsterType + " smacked " + pat.getName() + " for " + f2 + " points of damage.");
             }
           }
         }
