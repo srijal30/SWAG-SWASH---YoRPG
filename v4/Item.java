@@ -72,7 +72,7 @@ public class Item {
     */
 
     //List of Items
-    Item[] itemList = {
+    public static Item[] itemList = {
 
         //0 Weak Locket of Life
         new Item(
@@ -105,6 +105,8 @@ public class Item {
         ),
 
     };
+
+    public static int itemListCount = itemList.length;
 
     
 }

@@ -3,8 +3,11 @@ public class Protagonist extends Character {
     //INSTANCE VARS
     protected String name;
 
+    private int purse = 0;
+
     protected int maxItemCount = 3; //each class has diff item count? Maybe level system?
     private int itemCount = 0;
+    private Item[] itemBag = new Item[3];
 
     //Constructor with name
     public Protagonist(String name){
@@ -16,6 +19,17 @@ public class Protagonist extends Character {
     //Accesor Methods
     public String getName(){
         return name;
+    }
+    public int getPurse(){
+        return purse;
+    }
+    public String getItemList(){
+        String result = "Item List: ";
+        result += "\n\t1: " + itemBag[0].getName();
+        result += "\n\t2: " + itemBag[1].getName();
+        result += "\n\t3: " + itemBag[2].getName();
+
+        return result;
     }
 
     //Function Methods
@@ -30,19 +44,41 @@ public class Protagonist extends Character {
         defense *= 2;
     }
 
-    //Adds item if you can hold it and returns a statement saying wheter succesful or not
-    public String addItem( Item itm ){
-        if( itemCount >= maxItemCount){
-            return "You do not have enough space for this item.";
+    //Attempts to add item. True if works and false if it doesnt work.
+    public boolean addItem( Item itm ){
+        if( itemCount > maxItemCount-1){
+            System.out.println("\nYour item bag is full!");
+            return false;
         }
 
         //we use Math.max to make sure it doesnt go below 0
-        health = Math.max( health + itm.getHealthMod(), 0);
+        itemBag[itemCount] = itm;
+        itemCount++;
+
+        health = Math.max( health + itm.getHealthMod(), 1);
         strength = Math.max( strength + itm.getStrengthMod(), 0);
         defense = Math.max( defense + itm.getDefenseMod(), 0);
         range = Math.max( range + itm.getRangeMod(), 0);
 
-        return "You were able to succesfully add " + itm.getName() + " to your item bag.";
+        System.out.println("\nSuccesfully added " + itm.getName() + " to your item bag!");
+        return true;
+    }
+
+    //Drop item
+    public boolean dropItem(int index){
+        if( index > 2 || index < 0) return false;
+        itemBag[index] = null;
+        itemCount--;
+        return true;
+    }
+
+
+    //Gives gold to player
+    public void changePurse(int amount){
+        purse += amount;
+        
+        if(amount >= 0) System.out.println("\nYou have received " + amount + " gold!" );
+        else System.out.println("\nYou have lost " + Math.abs(amount) + " gold!" );
     }
 
 }

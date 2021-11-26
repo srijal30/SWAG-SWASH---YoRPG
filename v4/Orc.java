@@ -1,9 +1,15 @@
 public class Orc extends Monster{
 
-    public Orc(){
+    public Orc(int distance){
+      super(distance);
+      
       health =  40 + (int) (Math.random() * 20);
       strength = 25 + (int) (Math.random() * 5);
       defense = 15 + (int) (Math.random() * 5);
+    
+      type = "Orc";
+
+      lootMultiplier = 2;
     }
 
     public static String about(){

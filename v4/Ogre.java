@@ -1,9 +1,15 @@
 public class Ogre extends Monster{
 
-  public Ogre(){
+  public Ogre(int distance){
+    super(distance);
+
     health =  60 + (int) (Math.random() * 20);
     strength = 15 + (int) (Math.random() * 5);
     defense = 15 + (int) (Math.random() * 5);
+
+    type = "Ogre";
+
+    lootMultiplier = 3;
   }
 
   public static String about(){
