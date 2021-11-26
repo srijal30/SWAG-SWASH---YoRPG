@@ -1,5 +1,6 @@
 # SWAG-SWASH---YoRPG: Salaj Rijal, Michael Kamela, Ariel Fuchs
 Latest Version with no extra features: 2
+
 Latest Version: 3
 
 Based. 
@@ -86,12 +87,13 @@ Further diversified classes by adding 3 new Monsters and 3 new Protaginists. Eac
 ### v3
 Added ability to choose wheter to attack, flee, or approach the monster.
 
+
 **--Work in Progress Versions--**
 
 ### v4
 Started work on items.
 
-###
+### v5
 Started working on movemnet and range system.
 
 ## Future Hopes
