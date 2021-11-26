@@ -9,7 +9,6 @@ public class Archer extends Protagonist{
     strength = 15;
     defense = 5;
     //range = 50;
-
   }
 
   public static String about(){

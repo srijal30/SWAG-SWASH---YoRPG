@@ -96,7 +96,7 @@ public class YoRPG {
     s += "\t1: Easy\n";
     s += "\t2: Not so easy\n";
     s += "\t3: Beowulf hath nothing on me. Bring it on.\n";
-    s += "Selection: ";
+    s += "\nSelection: ";
 
     System.out.print( s ); //Print Screen
 
@@ -115,7 +115,7 @@ public class YoRPG {
     //instantiate the player's character
 
     //choose name
-    s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
+    s = "\nIntrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
     try {
@@ -130,9 +130,9 @@ public class YoRPG {
     }
 
     //choose class
-    s = "\nChoose a Class:\n1: Warrior\n" + Warrior.about() + "\n";
-    s += "2: Mage\n" + Mage.about() + "\n";
-    s += "3: Archer\n" + Archer.about() + "\n\n";
+    s = "\nChoose a Class:\n\t1: Warrior\n\t" + Warrior.about() + "\n\n\t";
+    s += "2: Mage\n\t" + Mage.about() + "\n\n\t";
+    s += "3: Archer\n\t" + Archer.about() + "\n\n";
     s += "What is your background?: ";
     System.out.print(s);
 
@@ -153,7 +153,7 @@ public class YoRPG {
     }
 
     //warning
-    s = "\nThy is about to enter the dungeon, becareful as there will be Goblins, Orcs, and Ogres.";
+    s = "\nThy is about to enter the dungeon, becareful as there will be Goblins, Orcs, and Ogres.\n";
     System.out.println(s);
   }//end newGame()
 
@@ -169,8 +169,9 @@ public class YoRPG {
     int d1, d2;
     int f2;
 
+    System.out.println("==================================================================================================="); //barrier
     if ( Math.random() >= ( difficulty / 3.0 ) )
-	    System.out.println( "\nPhew! There was no monster in this floor, continue to the next." );
+	    System.out.println( "\nPhew! There were no monsters in this floor, let's continue to the next." );
 
       else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
@@ -198,66 +199,77 @@ public class YoRPG {
         monsterInfo = Goblin.about();
       }
 
-      System.out.println("It seems you have encountered the " + monsterType + monsterInfo + "It is " + distance + " meters away.");
+      System.out.println("It seems you have encountered the " + monsterType + ". It is " + distance + " meters away" + monsterInfo);
 
 	    while( smaug.isAlive() && pat.isAlive() ) {
 
         //Options for what the user can do: approach, attack, retreat
+        System.out.println("\nChoose Your Action:");
+        System.out.println("1: Attack!");
+        System.out.println("2: Approach the beast");
+        System.out.println("3: Flee, coward!");
+        System.out.print("\nHow will our hero proceed?: ");
+        
+        //Input for options
         try {
-          System.out.println("\nHow does our hero proceed?");
-          System.out.println("\n1: Attack!");
-          System.out.println("\n2: Approach the beast");
-          System.out.println("\n3: Flee, coward!");
           choice = Integer.parseInt(in.readLine());
-          if (choice == 1 /*&& range >= distance*/) { //Attack option: working on integrating range into this, might have to do it in one of the classes if I want the monsters to be limited by range too
-            try {
-              System.out.println( "\nDo you feel lucky?" );
-              System.out.println( "\t1: Nay.\n\t2: Aye!" );
-              i = Integer.parseInt( in.readLine() );
-                if ( i == 2 ){
-                  pat.specialize();
-                }
-                else{
-                  pat.normalize();
-                }
-            }
-            catch ( IOException e ) {
-              System.out.println("An error has occured, plz try again.");
-            }
-            d1 = pat.attack( smaug );
-            d2 = smaug.attack( pat );
-
-            System.out.println( "\n" + pat.getName() + " dealt " + d1 +
-                                " points of damage.");
-
-            System.out.println( "\n" + "Ye Olde " + monsterType + " smacked " + pat.getName() + " for " + d2 + " points of damage.");
-          } else if (choice == 2) {// Choice 2: approach the monster, need to add a restriction that you cant be <1 meters from the monster (not 0 because it doesnt make sense to be in the exact same spot)
-              distance = distance - 5;
-              System.out.println("The beast is now " + distance + " meters away");
-          } else if (choice ==3) {//Choice 3: flee. 25% chance at getting away using Math.random
-            double chance = Math.random();
-            if (chance > 0.75) {
-              System.out.println("You have escaped!");
-              playTurn();
-            } else {
-              System.out.println("The monster has pursued you! Fight now or die!");
-              f2 = smaug.attack(pat);
-              System.out.println( "\n" + "Ye Olde " + monsterType + " smacked " + pat.getName() + " for " + f2 + " points of damage.");
-            }
-          }
         }
         catch (IOException e){
           System.out.println("An error has occured, plz try again.");
         }
-        // Give user the option of using a special attack:
-        // If you land a hit, you incur greater damage,
-        // ...but if you get hit, you take more damage.
 
+        //Attack option: working on integrating range into this, might have to do it in one of the classes if I want the monsters to be limited by range too
+        if (choice == 1) {
+          //If player wants to specialize or normalize
+          System.out.println( "\nSpecial Attack: " );
+          System.out.println( "\t1: Nay.\n\t2: Aye!\n");
+          System.out.print("Do you feel lucky?: ");
+          //input for specialize or normalize
+          try {
+            i = Integer.parseInt( in.readLine() );
+          }
+          catch ( IOException e ) {
+            System.out.println("An error has occured, plz try again.");
+          }
+          //conduct normalize or specialeze
+          if ( i == 2 ){
+            pat.specialize();
+          }
+          else{
+            pat.normalize();
+          }
+          //calculate damage
+          d1 = pat.attack( smaug );
+          d2 = smaug.attack( pat );
+          //show damage player did
+          System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+                              " points of damage.");
+          //show damage monster did
+          System.out.println( "\n" + "Ye Olde " + monsterType + " smacked " + pat.getName() + " for " + d2 + " points of damage.");
+        } 
 
+        // Choice 2: approach the monster, need to add a restriction that you cant be <1 meters from the monster. Also monster should be able to attack if in range
+        else if (choice == 2) {
+            distance = distance - 5;
+            System.out.println("The beast is now " + distance + " meters away");
+        } 
 
+        //Choice 3: flee. 25% chance at getting away using Math.random
+        else if (choice ==3) {
+          double chance = Math.random();
+          if (chance > 0.75) {
+            System.out.println("You have escaped!");
+            playTurn();
+          } else {
+            System.out.println("The monster has pursued you! Fight now or die!");
+            f2 = smaug.attack(pat);
+            System.out.println( "\n" + "Ye Olde " + monsterType + " smacked " + pat.getName() + " for " + f2 + " points of damage.");
+          }
+        }
+      
+      }//end while
 
-
-	    }//end while
+      ///Things that happen after the fight:
 
 	    //option 1: you & the monster perish
 	    if ( !smaug.isAlive() && !pat.isAlive() ) {
@@ -276,16 +288,15 @@ public class YoRPG {
         System.out.println( "Ye olde self hath expired. You got dead." );
         return false;
 	    }
+
     }//end else
 
     return true;
   }//end playTurn()
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
   public static void main( String[] args ) {
-    //As usual, move the begin-comment bar down as you progressively
-    //test each new bit of functionality...
+    
     //loading...
     YoRPG game = new YoRPG();
 

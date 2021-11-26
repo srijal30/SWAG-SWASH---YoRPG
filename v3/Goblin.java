@@ -8,7 +8,7 @@ public class Goblin extends Monster{
     }
   
     public static String about(){
-      return ". Prooced with caution, the goblin is a sneaky theif, they do love their gold. Be careful to not underestimate them, for it will cause your doom.";
+      return ". Prooced with caution, as the goblin is a sneaky theif (they do love their gold). Be careful to not underestimate it, for it will cause your doom.";
     }
   
   }
