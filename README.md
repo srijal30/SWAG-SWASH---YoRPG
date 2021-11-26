@@ -1,5 +1,6 @@
 # SWAG-SWASH---YoRPG: Salaj Rijal, Michael Kamela, Ariel Fuchs
-Latest Version: 2
+Latest Version with no extra features: 2
+Latest Version: 3
 
 Based. 
 
@@ -80,7 +81,18 @@ Made superclass Character, which the classes Monster and Protaginist stem from. 
 similar vars and methods were in both Monster and Protaginist.
 
 ### v2
-Further diversified classes by adding 3 new Monsters and 3 new Protaginists. Each subclass has different stats, promoting different playstyles.
+Further diversified classes by adding 3 new Monsters and 3 new Protaginists. Each subclass has different stats, promoting different playstyles. This is the version that has no extra features other than the ones we were required to add.
+
+### v3
+Added ability to choose wheter to attack, flee, or approach the monster.
+
+**--Work in Progress Versions--**
+
+### v4
+Started work on items.
+
+###
+Started working on movemnet and range system.
 
 ## Future Hopes
 
