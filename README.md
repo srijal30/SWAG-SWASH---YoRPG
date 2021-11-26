@@ -1,7 +1,7 @@
 # SWAG-SWASH---YoRPG: Salaj Rijal, Michael Kamela, Ariel Fuchs
 Latest Version with no extra features: 2
 
-Latest Version: 3
+Latest Version: 4
 
 Based. 
 
@@ -85,7 +85,7 @@ similar vars and methods were in both Monster and Protaginist.
 Further diversified classes by adding 3 new Monsters and 3 new Protaginists. Each subclass has different stats, promoting different playstyles. This is the version that has no extra features other than the ones we were required to add.
 
 ### v3
-Added ability to choose wheter to attack, flee, or approach the monster.
+Added ability to choose what to do during battle (attack, flee, or approach).
 
 
 **--Work in Progress Versions--**
@@ -98,10 +98,10 @@ Started working on movemnet and range system.
 
 ## Future Hopes
 
-* Range System
-* Linear Movement Mechanic
-* Add Items
-* Different Options During Battle
+* Range System --adding
+* Linear Movement Mechanic --adding
+* Add Items --adding
+* Different Options During Battle --added
 * Multiplayer
 * Graphics
-
+* Shop and Economy

@@ -1,8 +1,8 @@
 public class Archer extends Protagonist{
   
-  public Archer(String _name){
-    //name
-    name = _name;
+  public Archer(String name){
+
+    super(name);
     
     //character attributes
     health = 75;

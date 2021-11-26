@@ -10,6 +10,8 @@ public class Mage extends Protagonist {
       range = 20;
 
 
+      
+      //Gandalf OP Easter Egg
       if( name.equals("Gandalf") ){
         System.out.println("\nSICKO MODE ACTIVATED");
         health = 69000; //Very nice

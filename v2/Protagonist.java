@@ -4,8 +4,8 @@ public class Protagonist extends Character {
     protected String name;
 
     //Constructor with name
-    public Protagonist(){
-
+    public Protagonist(String name){
+        this.name = name;
     }
 
     //Methods

@@ -1,8 +1,8 @@
 public class Warrior extends Protagonist{
 
-  public Warrior( String _name ){
+  public Warrior( String name ){
 
-    name = _name;
+    super(name);
     
     health = 150;
     strength = 15;
