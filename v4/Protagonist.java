@@ -67,8 +67,15 @@ public class Protagonist extends Character {
     //Drop item
     public boolean dropItem(int index){
         if( index > 2 || index < 0) return false;
+        Item itm = itemBag[index];
         itemBag[index] = null;
         itemCount--;
+
+        health = Math.max( health - itm.getHealthMod(), 1);
+        strength = Math.max( strength - itm.getStrengthMod(), 0);
+        defense = Math.max( defense - itm.getDefenseMod(), 0);
+        range = Math.max( range - itm.getRangeMod(), 0);
+
         return true;
     }
 

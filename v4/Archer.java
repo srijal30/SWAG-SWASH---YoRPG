@@ -6,7 +6,7 @@ public class Archer extends Protagonist{
 
     //character attributes
     health = 75;
-    strength = 20;
+    strength = 30;
     defense = 5;
     range = 50;
 

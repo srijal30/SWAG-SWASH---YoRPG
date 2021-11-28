@@ -5,7 +5,7 @@ public class Mage extends Protagonist {
       super(name);
 
       health = 69; //nice
-      strength = 15;
+      strength = 20;
       defense = 20;
       range = 20;
 

@@ -104,6 +104,76 @@ public class Item {
             "Made by a respectable blacksmith. While it increaes your defense, it limits your striking power."  //lore
         ),
 
+        //3 Over-Bearing Neckalace
+        new Item(
+            20, //health modifier
+            0, //strength modifier
+            10, //defense modifier
+            -10, //range modifier
+            "Over-Bearing Neckalace", //name
+            "This neckalace will help keep you safe. Maybe a little bit too safe."  //lore
+        ),
+
+        //4 Godly Life Totem
+        new Item(
+            100, //health modifier
+            0, //strength modifier
+            0, //defense modifier
+            0, //range modifier
+            "Godly Life Totem", //name
+            "Forged by the gods and dropped into Earth. Let's say you wont be dying for a while."  //lore
+        ),
+
+        //5 Family Picture
+        new Item(
+            0, //health modifier
+            25, //strength modifier
+            -10, //defense modifier
+            0, //range modifier
+            "Family Picture", //name
+            "A picture of your family. While it gives you the strength to continue, lets say you drop your guard down a bit too."  //lore
+        ),
+
+        //6 Keys To Success
+        new Item(
+            10, //health modifier
+            10, //strength modifier
+            10, //defense modifier
+            0, //range modifier
+            "Keys To Success", //name
+            "Be sure to use your keys whenever you can."  //lore
+        ),
+
+        //7 Rusty Sheild
+        new Item(
+            0, //health modifier
+            0, //strength modifier
+            10, //defense modifier
+            0, //range modifier
+            "Rusty Sheild", //name
+            "It's clearly been through alot."  //lore
+        ),
+
+        //8 Whey Protein
+        new Item(
+            30, //health modifier
+            25, //strength modifier
+            0, //defense modifier
+            0, //range modifier
+            "Whey Protein", //name
+            "Gains, Gains, GAINS!"  //lore
+        ),
+
+        //9 Cellphone
+        new Item(
+            0, //health modifier
+            -5, //strength modifier
+            -10, //defense modifier
+            10, //range modifier
+            "Cellphone", //name
+            "Very Distracting"  //lore
+        )
+
     };
 
     public static int itemListCount = itemList.length;

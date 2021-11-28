@@ -5,7 +5,7 @@ public class Warrior extends Protagonist{
     super(name);
 
     health = 150;
-    strength = 15;
+    strength = 20;
     defense = 15;
     range = 5;
   }

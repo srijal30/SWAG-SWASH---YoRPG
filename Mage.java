@@ -1,12 +1,12 @@
 public class Mage extends Protagonist {
   
-    public Mage(String _name){
+    public Mage(String name){
   
-      name = _name;
+      super(name);
   
       health = 69; //nice
-      strength = 20;
-      defense = 7;
+      strength = 30;
+      defense = 20;
       //range = 20;
   
 

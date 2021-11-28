@@ -5,8 +5,8 @@ public class Goblin extends Monster{
     public Goblin(int distance){
       super(distance);
       
-      health =  30 + (int) (Math.random() * 20);
-      strength = 17 + (int) (Math.random() * 5); //hard to catch = high defense
+      health =  15 + (int) (Math.random() * 20);
+      strength = 10 + (int) (Math.random() * 5); 
       defense = 4 + (int) (Math.random() * 5);
 
       type = "Goblin";
