@@ -16,6 +16,15 @@
  *
  *
  * DISCO:
+int counter = 0;
+  for(int i = 0; i < nums.length; i++){
+    if(nums[i] % 2 == 0){
+      counter = counter + 1;
+     
+    }
+  }
+   return counter;
+}
  * You can create subclass by using "extends" keyword.
  *
  * When we extended protagonist and still only had one constructor, the
@@ -225,9 +234,20 @@ public class YoRPG {
 
     // Choice 2: approach the monster, need to add a restriction that you cant be <1 meters from the monster. Also monster should be able to attack if in range
     else if (choice == 2) {
-        smaug.move(-5);
+        if(smaug.getDistance() > 4){
+	smaug.move(-5);
         System.out.println("The beast is now " + smaug.getDistance() + " meters away");
-    } 
+    	} 
+	
+	else if (smaug.getDistance() > 0){
+	smaug.move(-smaug.getDistance);
+	System.out.println("The beast is now " + smaug.getDistance() + "meters away");
+	}
+
+	else {
+	System.out.println("Any closer and thy will merge");
+	}
+}
 
     //Choice 3: flee. 25% chance at getting away using Math.random
     else if (choice ==3) {
