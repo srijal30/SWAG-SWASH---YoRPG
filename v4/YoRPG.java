@@ -20,7 +20,7 @@ int counter = 0;
   for(int i = 0; i < nums.length; i++){
     if(nums[i] % 2 == 0){
       counter = counter + 1;
-     
+
     }
   }
    return counter;
@@ -68,6 +68,7 @@ public class YoRPG {
   private int moveCount; //useless
   private boolean gameOver; //useless
   private int difficulty;
+  private boolean hasFled = false;
 
   //Input Readers
   private InputStreamReader isr;
@@ -174,7 +175,7 @@ public class YoRPG {
   public void playAttack(){
     int d1, d2;
     int option = 0;
-    
+
     //If player wants to specialize or normalize
     System.out.println( "\nSpecial Attack: " );
     System.out.println( "\t1: Nay.\n\t2: Aye!\n");
@@ -230,17 +231,17 @@ public class YoRPG {
     //Attack option: working on integrating range into this, might have to do it in one of the classes if I want the monsters to be limited by range too
     if (choice == 1) {
       this.playAttack();
-    } 
+    }
 
     // Choice 2: approach the monster, need to add a restriction that you cant be <1 meters from the monster. Also monster should be able to attack if in range
     else if (choice == 2) {
-        if(smaug.getDistance() > 4){
+        if(smaug.getDistance() > 5){
 	smaug.move(-5);
         System.out.println("The beast is now " + smaug.getDistance() + " meters away");
-    	} 
-	
-	else if (smaug.getDistance() > 0){
-	smaug.move(- smaug.getDistance());
+    	}
+
+	else if (smaug.getDistance() > 1){
+	smaug.move(- smaug.getDistance()+1);
 	System.out.println("The beast is now " + smaug.getDistance() + " meters away");
 	}
 
@@ -254,9 +255,9 @@ public class YoRPG {
       double chance = Math.random();
 
       if (chance > 0.75) {
-        System.out.println("You have escaped!");
         smaug.destroy();
-      } 
+        hasFled = true;
+      }
       else {
         System.out.println("The " + smaug.getType() + " has pursued you! Fight now or die!");
         f2 = smaug.attack(pat);
@@ -267,7 +268,7 @@ public class YoRPG {
 
   /*=============================================
     void spawnMonster -- spawns a Monster
-    pre:  
+    pre:
     post: Creates a monster of type Ogre, Orc, or Goblin and sets it as smaug
     =============================================*/
   public void spawnMonster(){
@@ -292,22 +293,22 @@ public class YoRPG {
       smaug = new Goblin( distance );
       monsterType = "Goblin";
       monsterInfo = Goblin.about();
-      System.out.println("It seems you have encountered the " + monsterType + ". It is " + distance + " meters away" + monsterInfo);
     }
+    System.out.println("It seems you have encountered the " + monsterType + ". It is " + distance + " meters away" + monsterInfo);
   }
 
   /*=============================================
   void itemPickup -- does stuff with item dropped
-  pre: smaug drops an item 
+  pre: smaug drops an item
   post: either pick up item or no
   =============================================*/
   public void itemPickup(Item droppedItem){
-    System.out.println("\nThe " + smaug.getType() + " has dropped a " + droppedItem.getName());    
+    System.out.println("\nThe " + smaug.getType() + " has dropped a " + droppedItem.getName());
     System.out.println("\nWhat to Do: ");
     System.out.println("\t1: Attempt to pick up the item\n" +
                        "\t2: Learn more about the item\n" +
                        "\t3: Ignore the item\n");
-    
+
     System.out.print("How to procced?: ");
     int response = 0;
     //input
@@ -327,12 +328,12 @@ public class YoRPG {
         } catch (IOException e){}
         if( option == 1){
           System.out.println( pat.getItemList() );
-          
+
           int itemDropChoice = 0;
           try{
             itemDropChoice = Integer.parseInt( in.readLine() );
           } catch (IOException e){}
-          
+
           boolean worked = pat.dropItem( itemDropChoice - 1);
           //until valid index returned
           while( !worked ){
@@ -369,7 +370,7 @@ public class YoRPG {
 	    System.out.println( "\nPhew! There were no monsters in this floor, let's continue to the next." );
       return true;
     }
-    
+
     //spawns monster
     else {
       this.spawnMonster();
@@ -387,12 +388,15 @@ public class YoRPG {
                           "You cut ye olde " + smaug.getType() + " down, but " +
                           "with its dying breath ye olde " + smaug.getType() + " laid a fatal blow upon thy skull." );
       return false;
-	  }
-
-	  //option 2: you slay the beast
+    //option 1.5 you flee
+	  }else if(hasFled){
+      System.out.println("You have escaped!");
+      hasFled = false;
+    }
+	  //option 2: you slay the beast or escape
 	  else if ( !smaug.isAlive() ) {
       System.out.println( "HuzzaaH! Ye olde " + smaug.getType() + " hath been slain!" );
-      
+
       //Item and Gold functionality:
 
       //Returns if item if it is dropped, else null. Also gold is given.
@@ -405,7 +409,7 @@ public class YoRPG {
       else{
         this.itemPickup(droppedItem);
       }
-      
+
       return true;
 	  }
 
@@ -420,7 +424,7 @@ public class YoRPG {
 
 
   public static void main( String[] args ) {
-    
+
     //loading...
     YoRPG game = new YoRPG();
 
