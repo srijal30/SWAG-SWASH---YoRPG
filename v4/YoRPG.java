@@ -240,8 +240,8 @@ public class YoRPG {
     	} 
 	
 	else if (smaug.getDistance() > 0){
-	smaug.move(-smaug.getDistance);
-	System.out.println("The beast is now " + smaug.getDistance() + "meters away");
+	smaug.move(- smaug.getDistance());
+	System.out.println("The beast is now " + smaug.getDistance() + " meters away");
 	}
 
 	else {
