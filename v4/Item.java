@@ -173,7 +173,15 @@ public class Item {
             "Cellphone", //name
             "Very Distracting"  //lore
         )
-
+	//Good Grade
+	new item(
+	69,
+	69,
+	69,
+	69,
+	"Good Grade"
+	"Nothing is better then a good grade"
+	)
     };
 
     public static int itemListCount = itemList.length;
