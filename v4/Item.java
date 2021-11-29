@@ -172,21 +172,18 @@ public class Item {
             10, //range modifier
             "Cellphone", //name
             "Very Distracting"  //lore
-        )
-	//10 Good Grade
-	new Item(
-	69,
-	69,
-	69,
-	69,
-<<<<<<< HEAD
-	"Good Grade"
-	"Nothing is better then a good grade",
-=======
-	"Good Grade",
-	"Nothing is better then a good grade"
->>>>>>> b621559cd902e83d3916857bfc48ffe415afb4c3
-	)
+        ),
+
+	    //10 Good Grade
+	    new Item(
+	    69,
+	    69,
+	    69,
+	    69,
+	    "Good Grade",
+	    "Nothing is better then a good grade"
+	    )
+        
     };
 
     public static int itemListCount = itemList.length;
