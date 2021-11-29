@@ -180,7 +180,7 @@ public class Item {
 	69,
 	69,
 	"Good Grade"
-	"Nothing is better then a good grade"
+	"Nothing is better then a good grade",
 	)
     };
 
