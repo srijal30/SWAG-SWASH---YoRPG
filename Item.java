@@ -173,14 +173,19 @@ public class Item {
             "Cellphone", //name
             "Very Distracting"  //lore
         )
-	//Good Grade
-	new item(
+	//10 Good Grade
+	new Item(
 	69,
 	69,
 	69,
 	69,
+<<<<<<< HEAD
 	"Good Grade"
+	"Nothing is better then a good grade",
+=======
+	"Good Grade",
 	"Nothing is better then a good grade"
+>>>>>>> b621559cd902e83d3916857bfc48ffe415afb4c3
 	)
     };
 
